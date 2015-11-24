@@ -23,16 +23,29 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">
+        <li>
+         <% unless logged_in? %>
+         <%= logged_in? %>
+        <%=  current_user.username %>
+          <a href="#" class="btn btn-lg btn-success"
+             data-toggle="modal"
+             data-target="#welcomeModal">Log In</a>
+        </li>
+            <%end %>
+
+
+
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">user menu <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="../users/new">new user</a></li>
-            <li><a href="../users/show">see all users</a></li>
+            <li><a href="../users/">see all users</a></li>
             <li class="divider"></li>
             <li><a href="../tasks/new">new task</a></li>
-            <li><a href="../tasks/show">see all tasks</a></li>
+            <li><a href="../tasks/">see all tasks</a></li>
             <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="../logout/">Log Out</a></li>
           </ul>
         </li>
       </ul>
