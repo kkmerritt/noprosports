@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
+
+
+
+
 #my additional gems
 gem 'autoprefixer-rails'
 gem 'less-rails-bootstrap'
