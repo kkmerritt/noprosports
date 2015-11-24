@@ -1,0 +1,53 @@
+<%= form_for(@user) do |f| %>
+<form class="form-horizontal">
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div> -->
+
+
+  <fieldset>
+    <div class="form-group">
+      <label for="inputUser" class="col-lg-2 control-label">USERNAME <br></label>
+      <div class="col-lg-10">
+        <input type="text" name='user[username]' class="form-control" placeholder="<%= @user.username || "enter a username" %>">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">PASSWORD</label>
+      <div class="col-lg-10">
+        <input type="text" name='user[password]'class="form-control" placeholder="<%= @user.password || "enter a password" %>">
+
+      </div>
+    </div>
+    <!-- <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+
+    </div> -->
+    <div class="col-lg-10 col-lg-offset-2">
+           <button type="reset" class="btn btn-default">Cancel</button>
+           <button type="submit" class="btn btn-primary">Submit</button>
+         </div>
+  </fieldset>
+</form>
+<% end %>
