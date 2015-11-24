@@ -22,17 +22,13 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
 
+
       <ul class="nav navbar-nav navbar-right">
         <li>
-         <% unless logged_in? %>
-         <%= logged_in? %>
-        <%=  current_user.username %>
-          <a href="#" class="btn btn-lg btn-success"
-             data-toggle="modal"
-             data-target="#welcomeModal">Log In</a>
-        </li>
-            <%end %>
-
+         <% if logged_in? %>
+        <%else%>
+      <li> <a href="#" data-toggle="modal" data-target="#welcomeModal">log in</a></li>
+        <%end %>
 
 
 
@@ -45,7 +41,8 @@
             <li><a href="../tasks/new">new task</a></li>
             <li><a href="../tasks/">see all tasks</a></li>
             <li class="divider"></li>
-            <li><a href="../logout/">Log Out</a></li>
+            <%= link_to "Log Out", logout_path, method: :delete %>
+
           </ul>
         </li>
       </ul>
