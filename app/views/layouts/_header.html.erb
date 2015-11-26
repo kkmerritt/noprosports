@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -7,45 +7,45 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">prioritize.online</a>
+      <a class="navbar-brand" href="/">noprosports.online</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-
 
       <ul class="nav navbar-nav navbar-right">
         <li>
 
-    
-      <li> <a href="#" data-toggle="modal" data-target="#welcomeModal">log in</a></li>
+          <% unless logged_in? %>
+          <li> <a href="#" data-toggle="modal" data-target="#welcomeModal">log in</a></li>
+          <% else %>
+
+          <li><a href="../users/"> <%= current_user.username %></a></li>
+
+          <%end%>
 
 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">user menu <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <% if logged_in? %>
+              <li><a href="../users/">see all users</a></li>
+              <li class="divider"></li>
+              <li><a href="../teams/new">new team</a></li>
+              <li><a href="../teams/">see all teams</a></li>
+              <li class="divider"></li>
+              <li><%= link_to "log out", logout_path, method: :delete %></li>
+              <%else%>
+              <li><a href="../users/new">new user</a></li>
+              <%end%>
 
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">user menu <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="../users/new">new user</a></li>
-            <li><a href="../users/">see all users</a></li>
-            <li class="divider"></li>
-            <li><a href="../tasks/new">new task</a></li>
-            <li><a href="../tasks/">see all tasks</a></li>
-            <li class="divider"></li>
-            <%= link_to "Log Out", logout_path, method: :delete %>
-
-          </ul>
-        </li>
-      </ul>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+      <div class="btn-group btn-group-justified">
+    <a href="/softball" class="btn btn-default">softball</a>
+    <a href="/basketball" class="btn btn-default">basketball</a>
+    <a href="/soccer" class="btn btn-default">soccer</a>
   </div>
 </nav>

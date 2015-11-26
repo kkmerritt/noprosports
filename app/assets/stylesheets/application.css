@@ -14,3 +14,10 @@
  *= require_self
  *= require bootstrap
  */
+.well  {
+  margin-bottom: 0px;
+  padding:10px;
+  background-color: #aea79f;
+  border-color: #928C84;
+
+}

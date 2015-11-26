@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  resources :teams
     root 'application#welcome'
+    get 'basketball' => 'application#basketball'
+    get 'softball' => 'application#softball'
+    get 'soccer' => 'application#soccer'
+    
     get    'login'   => 'sessions#new'
     post   'login'   => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
 
-  resources :tasks
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
