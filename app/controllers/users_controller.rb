@@ -14,16 +14,21 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @teams = Team.all
+
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    @teams = Team.all
+
   end
 
   # POST /users
   # POST /users.json
   def create
+    @teams = Team.all
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -40,6 +45,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @teams = Team.all
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
