@@ -15,19 +15,19 @@
 
 
 <h2>ADMIN TEAM ADD</h2>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+
+  <div class="form-group">
+  <label for="inputTeam" class="col-lg-2 control-label">TEAM NAME <br></label>
+  <div class="col-lg-10">
+  <input type="text" name='team[name]' class="form-control" placeholder="<%= @team.name || "enter a team name" %>">
   </div>
 
 
+  <div class="form-group"><br>  <br>
 
-  <div class="field">
-    <%= f.label :league %><br>
-
+    <label>SPORT</label>
+    
     <select class="form-control" name='team[league]' id="select">
-
-
     <option>soccer</option>
     <option>basketball</option>
     <option>softball</option>
@@ -36,19 +36,13 @@
 
 
 
+  <div class="form-group">
+  <label for="inputTeam" class="col-lg-2 control-label">PLAYERS <br></label>
+  <div class="col-lg-10">
+  <input type="text" name='team[members]' class="form-control" placeholder="<%= @team.members || "enter team's players" %>">
+  </div>
 
-  <div class="field">
-    <%= f.label :members %><br>
-    <%= f.text_field :members %>
-  </div>
-  <div class="field">
-    <%= f.label :wins %><br>
-    <%= f.number_field :wins %>
-  </div>
-  <div class="field">
-    <%= f.label :losses %><br>
-    <%= f.number_field :losses %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
