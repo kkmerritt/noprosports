@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @teams = Team.all
-
     @user = User.new
   end
 
@@ -28,6 +27,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+
     @teams = Team.all
     @user = User.new(user_params)
 
@@ -35,9 +35,12 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        puts 'User was successfully created.'
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        puts 'User creation had errors.'
+
       end
     end
   end
@@ -46,6 +49,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @teams = Team.all
+    # @user.teams << user_params[:teams])
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -75,6 +80,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :password, :teams, :firstname, :lastname, :email)
     end
 end

@@ -7,8 +7,8 @@
     validates :password_digest, presence: true
     validates :password, presence: true
     # validates :password, length: {minimum: 8, allow_nil: true}
-    
 
-    belongs_to :teams
+
+    belongs_to :team
 
   end

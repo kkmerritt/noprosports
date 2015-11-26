@@ -15,11 +15,9 @@ module SessionsHelper
   # Returns true if the user is logged in, false otherwise.
   def logged_in?
     if current_user
-      puts "returned true"
       return true
     else
       return false
-      puts "returned false"
     end
   end
 
