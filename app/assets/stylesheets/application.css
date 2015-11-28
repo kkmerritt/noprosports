@@ -27,3 +27,6 @@
 
 .header-logo {
 }
+.navbar-brand > img {
+  height:4.3rem;
+}
