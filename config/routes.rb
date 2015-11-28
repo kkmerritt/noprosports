@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     get 'basketball' => 'application#basketball'
     get 'softball' => 'application#softball'
     get 'soccer' => 'application#soccer'
-    
+    get 'info' => 'application#info'
+    get 'contact' => 'application#contact'
+
     get    'login'   => 'sessions#new'
     post   'login'   => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
