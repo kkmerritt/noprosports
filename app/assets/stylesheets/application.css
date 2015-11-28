@@ -14,19 +14,47 @@
  *= require_self
  *= require bootstrap
  */
-.well  {
-  margin-bottom: 0px;
-  padding:10px;
-  background-color: #aea79f;
-  border-color: #928C84;
 
+ html {
+       overflow-y: scroll;
 }
+
+.well  {
+  position: fixed;
+    padding: 0px;
+    bottom: -5px;
+    left: 0%;
+    right: 0%;
+  border-color: #928C84;
+  padding-top: 1%;
+  border-radius: 0px;
+}
+
 #resetbtnonmodal {
   margin-left: 0px;
 }
 
 .header-logo {
 }
+
 .navbar-brand > img {
   height:4.3rem;
+}
+
+.jumbotron {
+  box-shadow: 2px 2px 15px black;
+}
+
+.footer-icons {
+  -webkit-filter: grayscale(100%);
+  margin: auto;
+  width: 3rem;
+  height: 3rem;
+  opacity: 1;
+  background-color: rgb(249, 249, 246);
+}
+
+.footer-icons:hover {
+  -webkit-filter: none;
+  transition: all 1s;
 }
