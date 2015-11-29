@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151126200127) do
     t.string   "members"
     t.integer  "wins"
     t.integer  "losses"
+    t.integer  "ties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

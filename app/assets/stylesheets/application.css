@@ -58,3 +58,19 @@
   -webkit-filter: none;
   transition: all 1s;
 }
+td, tr {
+  max-width: 1rem;
+  max-height: .1rem;
+}
+table {
+  padding: 0px;
+}
+.form-control {
+  max-width: 35rem;
+}
+
+fieldset {
+  padding: 1rem;
+       
+  border: 1px solid #e5e5e5;
+}

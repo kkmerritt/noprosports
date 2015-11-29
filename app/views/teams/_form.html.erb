@@ -1,4 +1,5 @@
-<%= form_for(@team) do |f| %>
+<%= form_for(@team) do |t| %>
+
   <% if @team.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
@@ -11,39 +12,32 @@
     </div>
   <% end %>
 
-
-
-
-<h2>ADMIN TEAM ADD</h2>
+  <form class="form-horizontal">
+  <fieldset>
 
   <div class="form-group">
-  <label for="inputTeam" class="col-lg-2 control-label">TEAM NAME <br></label>
+  <label for="inputTeam" class="col-lg-2 control-label">TEAM NAME<br></label>
   <div class="col-lg-10">
   <input type="text" name='team[name]' class="form-control" placeholder="<%= @team.name || "enter a team name" %>">
   </div>
+  </div>
 
+  <div class="form-group">
 
-  <div class="form-group"><br>  <br>
+    <label for="inputTeam" class="col-lg-2 control-label">SPORT<br></label>
+    <div class="col-lg-10">
 
-    <label>SPORT</label>
-
-    <select class="form-control" name='team[league]' id="select">
+<select class="form-control" name='team[league]' id="select">
     <option>soccer</option>
     <option>basketball</option>
     <option>softball</option>
-</select>
+</select>  </div></div><br>
+<br><br><br><br>
+  <div class="col-lg-10 col-lg-offset-2">
+  <button type="reset" class="btn btn-default">Cancel</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 
-
-
-  <div class="form-group">
-  <label for="inputTeam" class="col-lg-2 control-label">PLAYERS <br></label>
-  <div class="col-lg-10">
-  <input type="text" name='team[members]' class="form-control" placeholder="<%= @team.members || "enter team's players" %>">
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </fieldset>
+  </form>
 <% end %>

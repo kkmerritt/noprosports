@@ -1,21 +1,33 @@
-<h2>Softball League Info</h2>
+<h2>soccer league info</h2>
 
-<% @teams.each do |team| %>
+<table class="table table-hover">
+  <thead>
   <tr>
+    <th>name</th>
+    <th>wins</th>
+    <th>losses</th>
+    <th>ties</th>
+  </tr>
+</thead>
+
+<tbody>
+<% @teams.each do |team| %>
 <% if team.league == "soccer"%>
-    <td><h3><%= team.name %></h3></td>
+<tr>
+    <td><a href="/teams/<%= team.id %>"><%= team.name %></td></a>
+    <td><%= team.wins %></td>
+    <td><%= team.losses %></td>
+    <td>#</td>
 
-    <td>sport: <%= team.league %></td><br>
-    <td><%= link_to 'Show', team, class: "btn btn-danger btn-sm" %></td>
-    <td><%= link_to 'Edit', edit_team_path(team), class: "btn btn-danger btn-sm" %></td>
-    <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
-    <br>
-    <br>
-      </tr>
+
+    <!-- <td>< link_to 'Edit', edit_team_path(team) %></td>
+    <td>< link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
 <% end %>
 <% end %>
-<a href="#" class="btn btn-link">basketball rules</a>
-
+  </tr>
+</tbody>
+    </table>
+<a href="#" class="btn btn-link">soccer rules</a>
 <br><br><br><br>
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
