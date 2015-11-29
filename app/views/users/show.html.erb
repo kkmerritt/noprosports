@@ -1,27 +1,16 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>username:</strong>
-  <%= @user.username %>
-</p>
+<h2>  <%= @user.username %> </h2>
 
-<p>
-  <strong> name: </strong>
-  <%= @user.firstname %>
-</p>
-<p>
-  <strong>lastname:</strong>
-  <%= @user.lastname %>
-</p>
-<p>
-  <strong>email:</strong>
+  <h3>
+  <%= @user.firstname %>  <%= @user.lastname %>
+</h3>
+<h3>
   <%= @user.email %>
-</p>
+</h3>
 
-<p>
-  <strong> teams:</strong>
-  <%= @user.teams %>
-</p>
+<h4>
+   teams: <%= @user.teams %>
+</h4>
 
-<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-primary" %>
-<%= link_to 'Back', users_path, :class => "btn btn-primary" %>
+<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-default" %>
+<%= link_to 'Back', users_path, :class => "btn btn-default" %>

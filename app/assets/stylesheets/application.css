@@ -71,6 +71,9 @@ table {
 
 fieldset {
   padding: 1rem;
-       
   border: 1px solid #e5e5e5;
+}
+.jumbotron {
+  width: 85%;
+  padding: 1%;
 }
