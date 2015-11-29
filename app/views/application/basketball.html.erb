@@ -12,12 +12,12 @@
 
 <tbody>
 <% @teams.each do |team| %>
-<% if team.league == "basketball"%>
+<% if team.league == "soccer"%>
 <tr>
-    <td><a href="/teams/<%= team.id %>"><%= team.name %></td></a>
-    <td><%= team.wins %></td>
-    <td><%= team.losses %></td>
-    <td>#</td>
+    <td><a href="/teams/<%= team.id %>" class='btn btn-default'><%= team.name %></td></a>
+    <td><a href="/teams/<%= team.id %>" class='btn btn-default'><%= team.wins || '0' %></div></td>
+    <td><a href="/teams/<%= team.id %>" class='btn btn-default'><%= team.losses  || '0' %></div></td>
+    <td><a href="/teams/<%= team.id %>" class='btn btn-default'><%= team.ties || '0' %></div></td>
 
 
     <!-- <td>< link_to 'Edit', edit_team_path(team) %></td>
@@ -27,7 +27,7 @@
   </tr>
 </tbody>
     </table>
-<a href="#" class="btn btn-link">basketball rules</a>
+<a href="../rules#basketball" class="btn btn-link">basketball rules</a>
 <br><br><br><br>
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

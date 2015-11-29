@@ -139,7 +139,6 @@ input[type="submit"] {
 }
 button[disabled],
 html input[disabled] {
-  cursor: default;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -3028,7 +3027,6 @@ select[multiple].input-lg {
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn {
-  cursor: not-allowed;
   opacity: 0.65;
   filter: alpha(opacity=65);
   box-shadow: none;

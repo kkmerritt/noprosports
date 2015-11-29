@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'soccer' => 'application#soccer'
     get 'info' => 'application#info'
     get 'contact' => 'application#contact'
+    get 'rules' => 'application#rules'
 
     get    'login'   => 'sessions#new'
     post   'login'   => 'sessions#create'
