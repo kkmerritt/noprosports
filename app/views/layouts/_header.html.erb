@@ -31,14 +31,14 @@
             <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">user menu <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <% if logged_in? %>
-              <li><a href="../users/" >see all users</a></li>
+              <li><a href="/users/" >see all users</a></li>
               <li class="divider"></li>
-              <li><a href="../teams/new">new team</a></li>
-              <li><a href="../teams/">see all teams</a></li>
+              <li><a href="/teams/new">new team</a></li>
+              <li><a href="/teams/">see all teams</a></li>
               <li class="divider"></li>
               <li><%= link_to "log out", logout_path, method: :delete %></li>
               <%else%>
-              <li><a href="../users/new">new user</a></li>
+              <li><a href="/users/new">new user</a></li>
               <%end%>
 
             </ul>
