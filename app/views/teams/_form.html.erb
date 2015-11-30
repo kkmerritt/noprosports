@@ -21,12 +21,36 @@
   <input type="text" name='team[name]' class="form-control" placeholder="<%= @team.name || "enter a team name" %>">
   </div>
   </div>
+  <div class="form-group">
+  <label for="inputTeam" class="col-lg-2 control-label">TEAM NAME<br></label>
+  <div class="col-lg-10">
+  <input type="text" name='team[players]' class="form-control" placeholder="<%= @team.players || "enter players" %>">
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="inputTeam" class="col-lg-2 control-label">TEAM WINS<br></label>
+  <div class="col-lg-10">
+  <input type="text" name='team[wins]' class="form-control" placeholder="<%= @team.wins || "enter wins" %>">
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="inputTeam" class="col-lg-2 control-label">TEAM LOSSES<br></label>
+    <div class="col-lg-10">
+    <input type="text" name='team[losses]' class="form-control" placeholder="<%= @team.losses || "enter losses" %>">
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputTeam" class="col-lg-2 control-label">TEAM TIES<br></label>
+      <div class="col-lg-10">
+      <input type="text" name='team[ties]' class="form-control" placeholder="<%= @team.ties || "enter ties" %>">
+      </div>
+      </div>
+
 
   <div class="form-group">
-
     <label for="inputTeam" class="col-lg-2 control-label">SPORT<br></label>
     <div class="col-lg-10">
-
 <select class="form-control" name='team[league]' id="select">
     <option>soccer</option>
     <option>basketball</option>
