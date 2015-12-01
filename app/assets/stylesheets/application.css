@@ -82,3 +82,6 @@ fieldset {
   width: 85%;
   padding: 1%;
 }
+#flashmessage {
+  margin-top: 2rem;
+}

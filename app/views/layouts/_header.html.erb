@@ -12,7 +12,10 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <% if admin_user %>
+<% if flash[:message] %>
+<li><div id="flashmessage" class="btn btn-success btn-xs"><%= flash[:danger] %></div></li>
+<% end %>
+<% if admin_user %>
 
         <li><a href="#" class="btn btn-warning btn-xs disabled">ADMINISTRATOR</a></li>
 <% end %>
@@ -99,3 +102,6 @@
   </div>
 </div>
 </form>
+<script>
+$(document).ready(function() {$("#flashmessage").delay(2500).fadeOut(500);});
+</script>
