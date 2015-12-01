@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
         flash[:message] = 'You are now logged in'
       else
         flash[:message] = 'Invalid email/password combination'
-
          render 'new'
       end
     end
@@ -18,6 +17,8 @@ class SessionsController < ApplicationController
     def destroy
         log_out
         redirect_to root_url
+        flash[:message] = 'You are now logged out'
+
       end
 
 
