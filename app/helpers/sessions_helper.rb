@@ -12,9 +12,10 @@ module SessionsHelper
   end
 
   def admin_user
-    if current_user.admin == true
+    if current_user.try(:admin?)
       return true
     else
+       current_user.update_attribute :admin, true
       return false
     end
   end
