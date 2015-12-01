@@ -1,79 +1,79 @@
 <%= form_for(@team) do |t| %>
 
   <% if @team.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
-      <ul>
-      <% @team.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <ul>
+    <% @team.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <form class="form-horizontal">
+<form class="form-horizontal">
   <fieldset>
 
-  <div class="form-group">
-  <label for="inputTeam" class="col-lg-2 control-label">TEAM NAME<br></label>
-  <div class="col-lg-10">
-  <input type="text" name='team[name]' class="form-control" placeholder="<%= @team.name || "enter a team name" %>">
-  </div>
-  </div>
-
-  <div class="form-group">
-  <label for="inputTeam" class="col-lg-2 control-label">TEAM WINS<br></label>
-  <div class="col-lg-10">
-  <input type="text" name='team[wins]' class="form-control" placeholder="<%= @team.wins || "enter wins" %>">
-  </div>
-  </div>
-  <div class="form-group">
-    <label for="inputTeam" class="col-lg-2 control-label">TEAM LOSSES<br></label>
-    <div class="col-lg-10">
-    <input type="text" name='team[losses]' class="form-control" placeholder="<%= @team.losses || "enter losses" %>">
+    <div class="form-group">
+      <label for="inputTeam" class="col-lg-2 control-label">TEAM NAME<br></label>
+      <div class="col-lg-10">
+        <input type="text" name='team[name]' class="form-control" placeholder="<%= @team.name || "enter a team name" %>">
+      </div>
     </div>
+
+    <div class="form-group">
+      <label for="inputTeam" class="col-lg-2 control-label">TEAM WINS<br></label>
+      <div class="col-lg-10">
+        <input type="text" name='team[wins]' class="form-control" placeholder="<%= @team.wins || "enter wins" %>">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTeam" class="col-lg-2 control-label">TEAM LOSSES<br></label>
+      <div class="col-lg-10">
+        <input type="text" name='team[losses]' class="form-control" placeholder="<%= @team.losses || "enter losses" %>">
+      </div>
     </div>
 
     <div class="form-group">
       <label for="inputTeam" class="col-lg-2 control-label">TEAM TIES<br></label>
       <div class="col-lg-10">
-      <input type="text" name='team[ties]' class="form-control" placeholder="<%= @team.ties || "enter ties" %>">
+        <input type="text" name='team[ties]' class="form-control" placeholder="<%= @team.ties || "enter ties" %>">
       </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="inputTeam" class="col-lg-2 control-label">SPORT<br></label>
+      <div class="col-lg-10">
+        <select class="form-control" name='team[league]' id="select">
+          <option>soccer</option>
+          <option>basketball</option>
+          <option>softball</option>
+        </select>
       </div>
+    </div>
+    <br>
+    <div class="col-lg-10 col-lg-offset-2"><br>
+      <button type="reset" class="btn btn-default">Cancel</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
 
-
-  <div class="form-group">
-    <label for="inputTeam" class="col-lg-2 control-label">SPORT<br></label>
-    <div class="col-lg-10">
-<select class="form-control" name='team[league]' id="select">
-    <option>soccer</option>
-    <option>basketball</option>
-    <option>softball</option>
-</select>
-</div>
-  </div>
-<br>
-  <div class="col-lg-10 col-lg-offset-2"><br>
-  <button type="reset" class="btn btn-default">Cancel</button>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-
-  <% if admin_user %>
-  <br><br><br>
+    <% if admin_user %>
+    <br><br><br>
     <span class="label label-warning">ADMIN CONTROL</span>
-  <br><br>
+    <br><br>
 
-  <div class="form-group">
-  <label for="inputTeam" class="col-lg-2 control-label">TEAM PLAYERS<br></label>
-  <div class="col-lg-10">
-  <input type="text" name='team[members]' class="form-control" placeholder="<%= @team.members || "enter players" %>">
-  </div>
-  </div>
+    <div class="form-group">
+      <label for="inputTeam" class="col-lg-2 control-label">TEAM PLAYERS<br></label>
+      <div class="col-lg-10">
+        <input type="text" name='team[members]' class="form-control" placeholder="<%= @team.members || "enter players" %>">
+      </div>
+    </div>
 
-<% end %>
+    <% end %>
 
 
   </fieldset>
-  </form>
+</form>
 <% end %>

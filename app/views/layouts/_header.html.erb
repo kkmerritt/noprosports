@@ -19,13 +19,13 @@
 
         <li><a href="#" class="btn btn-warning btn-xs disabled">ADMINISTRATOR</a></li>
 <% end %>
-        <li><a href="../info/" class="btn btn-default"> about us </a></li>
-        <li><a href="../contact/" class="btn btn-default"> contact us </a></li>
+        <li><a href="/info/" class="btn btn-default"> about us </a></li>
+        <li><a href="/contact/" class="btn btn-default"> contact us </a></li>
 
           <% unless logged_in? %>
           <li> <a href="#" data-toggle="modal" data-target="#welcomeModal" class="btn btn-default">log in</a></li>
           <% else %>
-          <li><a href="../users/<%= current_user.id %>" class="btn btn-default"> <%= current_user.username %></a></li>
+          <li><a href="/users/<%= current_user.id %>" class="btn btn-default"> <%= current_user.username %></a></li>
           <%end%>
 
 
