@@ -16,7 +16,7 @@ module SessionsHelper
       return true
     else
       # enable code below for current user to become admin
-       current_user.update_attribute :admin, true
+       #current_user.update_attribute :admin, true
       return false
     end
   end
