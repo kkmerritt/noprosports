@@ -21,12 +21,7 @@
   <input type="text" name='team[name]' class="form-control" placeholder="<%= @team.name || "enter a team name" %>">
   </div>
   </div>
-  <div class="form-group">
-  <label for="inputTeam" class="col-lg-2 control-label">TEAM NAME<br></label>
-  <div class="col-lg-10">
-  <input type="text" name='team[players]' class="form-control" placeholder="<%= @team.players || "enter players" %>">
-  </div>
-  </div>
+
   <div class="form-group">
   <label for="inputTeam" class="col-lg-2 control-label">TEAM WINS<br></label>
   <div class="col-lg-10">
@@ -55,12 +50,29 @@
     <option>soccer</option>
     <option>basketball</option>
     <option>softball</option>
-</select>  </div></div><br>
-<br><br><br><br>
-  <div class="col-lg-10 col-lg-offset-2">
+</select>
+</div>
+  </div>
+<br>
+  <div class="col-lg-10 col-lg-offset-2"><br>
   <button type="reset" class="btn btn-default">Cancel</button>
   <button type="submit" class="btn btn-primary">Submit</button>
   </div>
+
+  <% if admin_user %>
+  <br><br><br>
+    <span class="label label-warning">ADMIN CONTROL</span>
+  <br><br>
+
+  <div class="form-group">
+  <label for="inputTeam" class="col-lg-2 control-label">TEAM PLAYERS<br></label>
+  <div class="col-lg-10">
+  <input type="text" name='team[members]' class="form-control" placeholder="<%= @team.members || "enter players" %>">
+  </div>
+  </div>
+
+<% end %>
+
 
   </fieldset>
   </form>

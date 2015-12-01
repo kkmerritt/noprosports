@@ -15,11 +15,10 @@ module SessionsHelper
     if current_user.try(:admin?)
       return true
     else
-       current_user.update_attribute :admin, true
+  #     current_user.update_attribute :admin, true
       return false
     end
   end
-
 
   # Returns true if the user is logged in, false otherwise.
   def logged_in?

@@ -4,11 +4,13 @@ class ApplicationController < ActionController::Base
   helper_method :admin_user
 
   include SessionsHelper
-
+  def welcome
+      render 'welcome'
+  end
+  
   def softball
   @teams = Team.all
 
-  
       render 'softball'
   end
 
@@ -21,8 +23,6 @@ class ApplicationController < ActionController::Base
 
   def basketball
     @teams = Team.all
-
-
       render 'basketball'
   end
 end

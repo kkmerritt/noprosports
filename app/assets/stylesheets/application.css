@@ -44,6 +44,11 @@
 .jumbotron {
   box-shadow: 2px 2px 15px black;
 }
+footer {
+display: flex;
+justify-content: space-around;
+margin-bottom: 8px;
+}
 
 .footer-icons {
   -webkit-filter: grayscale(100%);

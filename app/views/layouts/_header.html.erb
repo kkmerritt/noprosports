@@ -10,20 +10,19 @@
       <a class="navbar-brand" href="/"><img src="/images/logo.gif"></a>
       </div>
 
-
-
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <% if admin_user %>
+
+        <li><a href="#" class="btn btn-warning btn-xs disabled">ADMINISTRATOR</a></li>
+<% end %>
         <li><a href="../info/" class="btn btn-default"> about us </a></li>
         <li><a href="../contact/" class="btn btn-default"> contact us </a></li>
 
           <% unless logged_in? %>
           <li> <a href="#" data-toggle="modal" data-target="#welcomeModal" class="btn btn-default">log in</a></li>
           <% else %>
-
           <li><a href="../users/<%= current_user.id %>" class="btn btn-default"> <%= current_user.username %></a></li>
-
           <%end%>
 
 
@@ -31,15 +30,24 @@
             <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">user menu <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <% if logged_in? %>
-              <li><a href="/users/" >see all users</a></li>
               <li class="divider"></li>
-              <li><a href="/teams/new">new team</a></li>
               <li><a href="/teams/">see all teams</a></li>
               <li class="divider"></li>
               <li><%= link_to "log out", logout_path, method: :delete %></li>
               <%else%>
               <li><a href="/users/new">new user</a></li>
-              <%end%>
+              <% end %>
+
+              <% if admin_user %>
+              <li class="divider"></li>
+              <li> <a href="/" >  <span class="label label-warning">ADMININSTRATOR</span></a></li>
+              <li><a href="/users/" >see all users</a></li>
+
+              <li><a href="/teams/new">new team</a></li>
+
+              <% end %>
+
+
 
             </ul>
           </li>
@@ -52,6 +60,7 @@
     <a href="/soccer" class="btn btn-default">soccer</a>
   </div>
 </nav>
+
 <!-- pop up log in modal -->
 <form accept-charset="UTF-8" action="/login" method="post">
 <div class="modal" id="welcomeModal">

@@ -21,6 +21,12 @@
 
 
 
-<%= link_to 'Edit', edit_team_path(@team), :class => "btn btn-default" %>
 <%= link_to 'Back', teams_path,  :class => "btn btn-default" %>
+
+<% if admin_user %>
+<br><br><br>
+  <span class="label label-warning">ADMIN CONTROL</span>
+<br><br>
+<%= link_to 'Edit', edit_team_path(@team), :class => "btn btn-default" %>
 <%= link_to "Delete", team_path(@team), :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
+<% end %>
